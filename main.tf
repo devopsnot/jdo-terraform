@@ -56,3 +56,12 @@ variable "region" {
 variable "ssh_key_name" {
   default = ""
 }
+
+output "jenkins_ip" {
+  value = digitalocean_droplet.jenkins.ipv4_address
+}
+
+resource "local_file" "foo" {
+  content  = digitalocean_kubernetes_cluster.k8s.kube_config.0.raw_config
+  filename = "kube_config.yaml"
+}
