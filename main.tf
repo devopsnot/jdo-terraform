@@ -9,5 +9,13 @@ terraform {
 
 # Configure the DigitalOcean Provider
 provider "digitalocean" {
-  token = "dop_v1_374525b4a9d76f80725ecb08358a65f0d0ceb01a47fc4f5778f19e1f7cbd4f55"
+  token = "dop_v1_a9347befe965ef3f97947922f0b7bce185e14daa14e19662c682acc0b1981d75"
+}
+
+# Create a new Web Droplet in the nyc2 region
+resource "digitalocean_droplet" "jenkins" {
+  image  = "ubuntu-22-04-x64"
+  name   = "jenkins"
+  region = "nyc1"
+  size   = "s-2vcpu-2gb"
 }
