@@ -44,6 +44,7 @@ resource "digitalocean_kubernetes_cluster" "k8s" {
   }
 }
 
+# ENVIRONMENT VARIABLE
 variable "do_token" {
   default = ""
 }
